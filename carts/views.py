@@ -19,13 +19,14 @@ def add_cart(request, product_id):
     if request.method == 'POST':
         for item in request.POST:
             key = item
-            value = request.POST[key]            
+            value = request.POST[key]    
+
             try:
                 variation = Variation.objects.get(product=product, variation_category__iexact=key, variation_value__iexact=value)
                 product_variation.append(variation)
             except:
-                pass
-            
+                pass           
+    
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request)) # Get the Cart using cart_id present in the session
     except Cart.DoesNotExist:
@@ -36,7 +37,7 @@ def add_cart(request, product_id):
 
     is_cart_item_exists = CartItem.objects.filter(product=product, cart=cart).exists()
     if is_cart_item_exists:
-        cart_item = CartItem.objects.filter(product=product, quantity = 1, cart=cart)
+        cart_item = CartItem.objects.filter(product=product, cart=cart)
         # existing_variations -> database
         # current variation -> product_variation
         # item_id -> database
