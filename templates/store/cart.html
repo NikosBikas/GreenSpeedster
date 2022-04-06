@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block content %}
-<section class="section-content padding-y bg">
+<body>
+
+<section class="section-content padding-y bg d-flex flex-column min-vh-100 bg-dark">
     <div class="container">   
     <!-- ============================ COMPONENT 1 ================================= -->
     {% if not cart_items %}
@@ -111,4 +113,6 @@
     <!-- ============================ COMPONENT 1 END .// ================================= -->   
     </div> <!-- container .//  -->
 </section>
+    
+</body>
 {% endblock %}
