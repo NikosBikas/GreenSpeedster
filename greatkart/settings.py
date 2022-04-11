@@ -139,9 +139,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-#SMTP CONFIGURATION
-# 
-#  
+# SMTP CONFIGURATION
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'nick.dev.testing@gmail.com'

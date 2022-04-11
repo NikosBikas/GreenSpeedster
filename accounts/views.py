@@ -1,3 +1,5 @@
+from lib2to3.pytree import type_repr
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from accounts.models import Account
 from .forms import RegistrationForm
@@ -40,14 +42,14 @@ def register(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
-            messages.success(request, 'Registration successfull')
-            return redirect('register')
+            # messages.success(request, 'Thank you for registering with us. We have sent you a verification email to your email address. Please verify it.')
+            return redirect('accounts/login/?command=verification&email='+email)
     else:
         form = RegistrationForm()
     context = {
         'form': form,
     }
-    return render(request, 'accounts/register.html', context)
+    return render(request, '/accounts/register.html', context)
 
 def login(request):
     if request.method == 'POST':
@@ -71,5 +73,18 @@ def logout(request):
     messages.success(request, 'You are logged out.')
     return redirect('login')
 
-def activate(request):
-    return
+def activate(request, uidb64, token):
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        user = Account._default_manager.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, Account.DoesNotExist):
+        user = None
+    
+    if user is not None and default_token_generator.check_token(user, token):
+        user.is_active = True
+        user.save()
+        messages.success(request, 'Congratulations! Yout account is activated.')
+        return redirect('login')
+    else:
+        messages.error(request, 'Invalid activation link')
+        return redirect('register')
