@@ -56,6 +56,7 @@
                     {% for category in links %}
                     <li><a href="{{ category.get_url }}">{{ category.category_name }}</a></li>
                     {% endfor %}
+                    <li><a href="{{ category.get_url }}"><b>{{ category.bikes }}</b></a></li>
                     </ul>    
                 </div> <!-- card-body.// -->
             </div>
