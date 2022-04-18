@@ -1,4 +1,6 @@
 {% load static %}
+
+
 <header class="section-header">    
     <section class="header-main border-bottom bg-light">
         <div class="container">
@@ -44,9 +46,9 @@
                                 {% if user.id is None %}
                                 <div class="widget-header">
                                     <small class="title text-black">Welcome guest!</small>
-                                    <div> 
-                                        <a class="text-black" href="{% url 'login' %}">Sign in</a> <span class="text-gray"> | </span>
-                                        <a class="text-black" href="{% url 'register' %}">Register</a>
+                                    <div > 
+                                        <a class="text-black" onMouseOver="this.style.color='rgb(12, 246, 12)'"onMouseOut="this.style.color='black'"  href="{% url 'login' %}">Sign in</a> <span class="text-gray"> | </span>
+                                        <a class="text-black" onMouseOver="this.style.color='rgb(12, 246, 12)'"onMouseOut="this.style.color='black'"  href="{% url 'register' %}">Register</a>
                                     </div>
                                 </div>
                                 {% else %}
@@ -59,7 +61,7 @@
                                 </div>
                                 {% endif %}
                                 <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
-                                    <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
+                                    <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"  onMouseOver="this.style.color='rgb(0, 181, 23)'"onMouseOut="this.style.color='black'"  ></i></div>
                                     <span class="badge badge-pill badge-danger notify">{{ cart_count }}</span>
                                 </a>
                             </div> <!-- widgets-wrap.// -->
