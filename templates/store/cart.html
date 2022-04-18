@@ -2,17 +2,18 @@
 {% load static %}
 
 {% block content %}
-<section class="section-content padding-y bg">
-    <div class="container">   
-    <!-- ============================ COMPONENT 1 ================================= -->
-    {% if not cart_items %}
-    <!-- message -->
-    <h2  class="text-center">Your Shopping Cart is Empty</h2>
-    <br>
-    <div class="text-center" style = "margin-bottom:130px;">
-        <a href="{% url 'store' %}" class="btn btn-success">Continue Shopping</a>
-    </div>
-    {% else %}
+<section class="section-content padding-y ">
+    <div class="container">
+        {% if not cart_items %}
+        <div class="" style="margin-bottom: 33%;">
+            <br><br><br>
+            <h2  class="text-center">Your Shopping Cart is Empty</h2>
+            <br>
+            <div class="text-center">
+                <a href="{% url 'store' %}" class="btn btn-success ">Continue Shopping</a>
+            </div>
+        </div>      
+        {% else %}
     <div class="row">
     <aside class="col-lg-9">
     <div class="card">
@@ -30,7 +31,7 @@
     <tr>
         <td>
             <figure class="itemside align-items-center">
-                <div class="aside"><img src="{{ cart_item.product.images.url }}" class="img-sm"></div>
+                <div class="aside"><img src="{{ cart_item.product.images.url }}" class="img-sm img-fluid img-thumbnail"></div>
                 <figcaption class="info">
                     <a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
                     <p class="text-muted small">
