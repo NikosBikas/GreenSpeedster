@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+    'orders',
+    
 ]
 
 MIDDLEWARE = [
@@ -140,9 +142,10 @@ MESSAGE_TAGS = {
 }
 
 # SMTP CONFIGURATION
-
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'nick.dev.testing@gmail.com'
 EMAIL_HOST_PASSWORD = '!2#4%6&8(Nick'
 EMAIL_USE_TLS = True
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
