@@ -64,4 +64,7 @@ def search(request):
     }
     return render(request, 'store/store.html', context)
 
+def contact(request):
+    return render(request, 'store/contact.html', {})
+
 
