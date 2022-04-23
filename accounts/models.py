@@ -80,7 +80,7 @@ class UserProfile(models.Model):
     profile_picture = models.ImageField(blank=True, upload_to='user_profile/')
     city = models.CharField(blank=True, max_length=20)
     state = models.CharField(blank=True, max_length=20)
-    country = models.IntegerField(blank=True)
+    country = models.CharField(blank=True, max_length=20)
 
     def __str__(self):
         return self.user.first_name
