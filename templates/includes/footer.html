@@ -1,19 +1,76 @@
-<footer class="mt-auto p-3 mb-0 bg-gray text-white text-center">
-	<div class="container">
-		<section class="footer-bottom border-top row">
-			<div class="col-md-2">
-				<p class="text-black"> &copy 2019 Company name </p>
+
+<style>
+
+	.footer-link {
+		font-size: 0.85rem;
+		position: relative;
+		color: rgba(7, 7, 7, 0.998);
+		transition: all 0.3s;
+	  }
+	  
+	  .footer-link:hover, .footer-link:focus {
+		padding-left: 0.6rem;
+		color: rgb(12, 246, 12);
+		text-decoration: none;
+	  }
+	  
+	  .footer-link:hover::before, .footer-link:focus::before {
+		opacity: 1;
+	  }
+	  
+	  .footer-link::before {
+		content: '\f0da';
+		display: inline-block;
+		font-family: 'Font Awesome\ 5 Free';
+		font-weight: 900;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+		color: rgb(1, 1, 1);
+		transition: all 0.3s;
+		opacity: 0;
+	  }
+</style>
+
+
+<footer class="bg-light text-black mt-auto">
+	<div class="container py-2">
+	  	<div class="row py-3">
+			<div class="col-md-4 mb-3 mb-md-0">
+				<h6 class="text-uppercase mb-3">Customer Services</h6>
+				<ul class="list-unstyled mb-0">
+				<li><a class="footer-link" href="#">Contact Us</a></li>
+				<li><a class="footer-link" href="#">Returns &amp; Refunds</a></li>			
+				<li><a class="footer-link" href="#">Terms &amp; Conditions</a></li>
+				</ul>
 			</div>
-			<div class="col-md-8 text-md-center">
-				<span  class="px-2">info@pixsellz.io</span>
-				<span  class="px-2">+879-332-9375</span>
-				<span  class="px-2">Street name 123, Avanue abc</span>
+			<div class="col-md-4 mb-3 mb-md-0">
+				<h6 class="text-uppercase mb-3">Company</h6>
+				<ul class="list-unstyled mb-0">
+				<li><a class="footer-link" href="#">About Us</a></li>
+				<li><a class="footer-link" href="#">Service</a></li>
+				<li><a class="footer-link" href="#">All Reviews</a></li>		
+				</ul>
 			</div>
-			<div class="col-md-2 text-md-right text-black">
-				<i class="fab fa-lg fa-cc-visa"></i>
-				<i class="fab fa-lg fa-cc-paypal"></i>
-				<i class="fab fa-lg fa-cc-mastercard"></i>
+			<div class="col-md-4 mb-3 mb-md-0">
+				<h6 class="text-uppercase mb-3">Social Media</h6>
+				<ul class="list-unstyled mb-0">
+				<li><a class="footer-link" href="#">Twitter</a></li>
+				<li><a class="footer-link" href="#">Instagram</a></li>
+				<li><a class="footer-link" href="#">Pinterest</a></li>
+				</ul>
+				<div>
+					<p class="small text-black" style = 'margin-left:150px;'>&copy; 2022 All rights reserved by TEAM 3</p>
+				</div>
 			</div>
-		</section>
-	</div><!-- //container -->
+			
+			
+	  	</div>
+	</div>
 </footer>
+
+
+
+

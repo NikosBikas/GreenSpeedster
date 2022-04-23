@@ -3,8 +3,7 @@
 
 {% block content %}
 
-
-<section class="section-conten padding-y" style="min-height:84vh">
+<section class="section-conten padding-y" style="min-height:75vh">
 {% if request.GET.command == 'verification' %}
   <div class="container mx-auto alert alert-info text-center" role="alert" style="max-width: 1000px; margin-top:100px;">
     Thank you for registering with us. We have sent you a verification email to [{{request.GET.email}}]
@@ -25,7 +24,7 @@
                 <input type="password" class="form-control" placeholder="Password" name="password">
               </div> <!-- form-group// -->              
               <div class="form-group">
-                  <a href="{% url 'forgotPassword' %}" class="float-right">Forgot password?</a>                
+                  <a href="{% url 'forgotPassword' %}" class="float-right text-success">Forgot password?</a>                
               </div> <!-- form-group form-check .// -->
               <div class="form-group">
                   <button type="submit" class="btn btn-success btn-block"> Login  </button>

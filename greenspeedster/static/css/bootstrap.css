@@ -161,12 +161,12 @@ sup {
 }
 
 a {
-  color: #3167eb;
+  color: #000;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #1244bd;
+  color: #12bd42;
   text-decoration: underline;
 }
 
@@ -9925,11 +9925,11 @@ button.bg-gray-light:focus {
 }
 
 .text-primary {
-  color: #3167eb !important;
+  color: #5ccd29  !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #1244bd !important;
+  color: #5ccd29 !important;
 }
 
 .text-secondary {
@@ -9993,7 +9993,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 a.text-primary-light:hover, a.text-primary-light:focus {
-  color: #1a56e9 !important;
+  color: #545454 !important;
 }
 
 .text-gray {
