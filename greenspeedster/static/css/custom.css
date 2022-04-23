@@ -44,3 +44,34 @@ label:hover ~ input:checked ~ label{
 .rating-star i{
     color: #cc9000 !important;
 }
+
+/* Change NavBar shoping cart icon on hover */
+ .fa-shopping-cart:hover{
+    color:#4CAF50 !important;
+ }
+ .fa-shopping-cart-o:hover{
+    color:#4CAF50 !important;
+ }
+
+/* Change Paginator Color */
+.pagination {
+display: inline-block;
+}
+
+.pagination a {
+color: black;
+float: left;
+padding: 8px 16px;
+text-decoration: none;
+}
+
+.pagination a.active {
+background-color: #4CAF50 ;
+color: white;
+border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+background-color: #4CAF50;
+border-radius: 5px;
+}

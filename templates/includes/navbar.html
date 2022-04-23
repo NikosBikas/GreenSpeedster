@@ -42,15 +42,17 @@
                 <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
                             <div class="d-flex justify-content-end mb-3 mb-lg-0">
                                 {% if user.id is None %}
-                                <div class="widget-header">
+                                <div>
                                     <small class="title text-black">Welcome guest!</small>
                                     <div > 
-                                        <a class="text-black" onMouseOver="this.style.color='rgb(12, 246, 12)'"onMouseOut="this.style.color='black'"  href="{% url 'login' %}">Sign in</a> <span class="text-gray"> | </span>
-                                        <a class="text-black" onMouseOver="this.style.color='rgb(12, 246, 12)'"onMouseOut="this.style.color='black'"  href="{% url 'register' %}">Register</a>
+                                        <!-- <a class="text-black" onMouseOver="this.style.color='rgb(12, 246, 12)'"onMouseOut="this.style.color='black'"  href="{% url 'login' %}">Sign in</a> <span class="text-gray"> | </span>
+                                        <a class="text-black" onMouseOver="this.style.color='rgb(12, 246, 12)'"onMouseOut="this.style.color='black'"  href="{% url 'register' %}">Register</a> -->
+                                        <a href="{% url 'login' %}">Sign in</a> <span class="text-gray"> | </span>
+                                        <a href="{% url 'register' %}">Register</a>
                                     </div>
                                 </div>
                                 {% else %}
-                                <div class="widget-header">
+                                <div>
                                     <small class="title text-black">Welcome {{ user.first_name }}!</small>
                                     <div> 
                                         <a class="text-black" href="{% url 'dashboard' %}">Dashboard</a> <span class="text-gray"> | </span>
@@ -59,7 +61,8 @@
                                 </div>
                                 {% endif %}
                                 <a href="{% url 'cart' %}" class="widget-header pl-3 ml-3">
-                                    <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"  onMouseOver="this.style.color='rgb(0, 181, 23)'"onMouseOut="this.style.color='black'"  ></i></div>
+                                    <!-- <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"  onMouseOver="this.style.color='rgb(0, 181, 23)'"onMouseOut="this.style.color='black'"  ></i></div> -->
+                                    <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart" ></i></div>
                                     <span class="badge badge-pill badge-danger notify">{{ cart_count }}</span>
                                 </a>
                             </div> <!-- widgets-wrap.// -->
@@ -93,10 +96,9 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                
                 <li><a href="mailto:nick.dev.testing@gmail.com" class="nav-link text-white"> <i class="fa fa-envelope"></i> Email </a></li>
                 <li><a href="tel:2103729050" class="nav-link text-white"> <i class="fa fa-phone"></i> Call us </a></li>
-            </ul> <!-- list-inline //  -->
+            </ul> 
           </div> <!-- navbar-collapse .// -->
         </div> <!-- container //  -->
         </nav>
