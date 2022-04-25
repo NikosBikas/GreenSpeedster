@@ -103,4 +103,6 @@ def submit_review(request, product_id):
                 messages.success(request, 'Thank you! Your review has been submitted.')
                 return redirect(url)
 
+def terms(request):
+    return render(request, "store/terms.html")
 
