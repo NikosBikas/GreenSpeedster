@@ -26,15 +26,21 @@
     }
     </style>
 <!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg">
-    <div class="container">
+<div class="container" style="margin-top: 20px;" >
+<section class="section-pagetop bg border  rounded" >
+    
         {% if 'search' in request.path %}
-            <h2 class="title-page">Search Results!</h2>
+            <div class="intro-banner-wrap ">
+                <img src="{% static 'images/banners/searchResults.png' %}" style="height: 120px;" class="img-fluid rounded">
+            </div>
         {% else %}
-            <h2 class="title-page">Our Store</h2>
+            <div class="intro-banner-wrap " >
+                <img src="{% static 'images/banners/ourStore.png' %}" style="height: 120px; " class="img-fluid rounded">
+            </div>
         {% endif %}        
-    </div> <!-- container //  -->
+    
 </section>
+</div>
 <!-- ========================= SECTION INTRO END// ========================= -->
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content padding-y">
@@ -61,34 +67,7 @@
                 </div> <!-- card-body.// -->
             </div>
         </article> <!-- filter-group  .// -->
-        <article class="filter-group">
-            <header class="card-header">
-                <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
-                    <i class="icon-control fa fa-chevron-down"></i>
-                    <h6 class="title">Sizes </h6>
-                </a>
-            </header>
-            <div class="filter-content collapse show" id="collapse_4" >
-                <div class="card-body">
-                  <label class="checkbox-btn">
-                    <input type="checkbox">
-                    <span class="btn btn-light"> XS </span>
-                  </label>    
-                  <label class="checkbox-btn">
-                    <input type="checkbox">
-                    <span class="btn btn-light"> SM </span>
-                  </label>    
-                  <label class="checkbox-btn">
-                    <input type="checkbox">
-                    <span class="btn btn-light"> LG </span>
-                  </label>    
-                  <label class="checkbox-btn">
-                    <input type="checkbox">
-                    <span class="btn btn-light"> XXL </span>
-                  </label>
-            </div><!-- card-body.// -->
-            </div>
-        </article> <!-- filter-group .// -->        
+                
         <article class="filter-group">
             <header class="card-header">
                 <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
@@ -96,13 +75,13 @@
                     <h6 class="title">Price range </h6>
                 </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_3">
+            <div class="filter-content collapse show" id="collapse_3" method="GET">
                 <div class="card-body">                    
                     <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Min</label>
                       <!-- <input class="form-control" placeholder="0" type="number"> -->
-                        <select class="mr-2 form-control">
+                        <select class="mr-2 form-control" name="price_min" >
                             <option value="0">0€</option>
                             <option value="50">50€</option>
                             <option value="100">100€</option>
@@ -114,7 +93,7 @@
                     </div>
                     <div class="form-group text-right col-md-6">
                         <label>Max</label>
-                            <select class="mr-2 form-control">
+                            <select class="mr-2 form-control" name="price_max" >
                             <option value="50">50€</option>
                             <option value="100">100€</option>
                             <option value="150">150€</option>
@@ -125,7 +104,7 @@
                         </select>
                     </div>
                     </div> <!-- form-row.// -->
-                    <button class="btn btn-block btn-success">Apply</button>
+                    <button class="btn btn-block btn-success" type="submit">Apply</button>
                 </div><!-- card-body.// -->
             </div>
         </article> <!-- filter-group .// -->        
