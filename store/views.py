@@ -131,3 +131,6 @@ def Service(request):
 
 def Returns_Refunds(request):
     return render(request,'Company/Returns_Refunds.html')
+
+def contact(request):
+    return render(request, 'store/contact.html',{})
