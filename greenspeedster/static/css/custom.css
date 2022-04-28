@@ -1,4 +1,8 @@
 /* Hide Radio button  */
+
+
+
+
 .rate > input{
     display: none;
 }
@@ -74,4 +78,38 @@ label:hover ~ input:checked ~ label{
   .pagination a:hover:not(.active) {
     background-color: #4CAF50;
     border-radius: 5px;
+  }
+
+
+
+  .footer-link {
+    font-size: 0.85rem;
+    position: relative;
+    color: rgba(7, 7, 7, 0.998);
+    transition: all 0.3s;
+  }
+  
+  .footer-link:hover, .footer-link:focus {
+    padding-left: 0.6rem;
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover::before, .footer-link:focus::before {
+    opacity: 1;
+  }
+  
+  .footer-link::before {
+    content: '\f0da';
+    display: inline-block;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: rgb(1, 1, 1);
+    transition: all 0.3s;
+    opacity: 0;
   }

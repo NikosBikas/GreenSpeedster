@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<div class="container" >
+    <section class="section-pagetop bg col-lg-12 col-md-6" >
+    
+                <div class="intro-banner-wrap">
+                    <img src="{% static 'images/banners/bannerService.jpg' %}"  class="img-fluid rounded">
+                </div>       
+        
+    </section>
+    
+</div> <!-- container //  -->
+<!-- ========================= SECTION INTRO END// ========================= -->
+<!-- ========================= SECTION  ==================================== -->
+<div class="container" >
+
+    <div id="paragraf" style="text-align: center;">
+            <p>Whatever you use yours for, keeping your bike, e-bike or e-scooter in top condition means that you can get more out <br> of it! Regular services at Pure Electric ensures that you can ride safely and with full confidence in your machine.<br>
+                Please note: Service Packs are not available for e-bikes and e-scooters used for commercial use.</p>
+                <h1>What services do you require?</h1>
+    </div>
+</div>
+
+
+<div class="container"> 
+
+        <div class="row" >
+            <div class="col" >
+                <div class="card">
+                    <img
+                        src="{% static 'images/Service/service_1.jpg' %}"
+                        class="card-img-top"
+                        alt="Sunset Over the Sea"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;" >Pedal & Electric Bike Servicing</h5>
+                        <p class="card-text" style="text-align: center;">
+                        Some quick example text to build on the card title and make up the bulk
+                        of the card's content.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <br>
+            <div class="col">
+                <div class="card">
+                    <img
+                        src="{% static 'images/Service/service_2.jpg' %}"
+                        class="card-img-top"
+                        alt="Fissure in Sandstone"
+                    />
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: center;">Electric Scooter Servicing</h5>
+                        <p class="card-text" style="text-align: center;">
+                        Some quick example text to build on the card title and make up the bulk
+                        of the card's content.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>
+      
+<!-- ========================= SECTION  END// ========================= -->
+
+
+{% endblock %}

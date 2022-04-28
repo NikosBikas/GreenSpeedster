@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from carts.views import _cart_id
 from carts.models import CartItem
-from .models import Product, ReviewRating
+from .models import Product, ReviewRating ,About_Us
 from category.models import Category
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Q
@@ -25,7 +25,7 @@ def store(request, category_slug=None):
         product_count = products.count()
     else:
         products = Product.objects.all().filter(is_available=True).order_by('id')
-        paginator = Paginator(products, 4)
+        paginator = Paginator(products, 6)
         page = request.GET.get('page')
         paged_products = paginator.get_page(page)
         product_count = products.count()
@@ -78,6 +78,15 @@ def search(request):
     }
     return render(request, 'store/store.html', context)
 
+def search_price(request):
+    if request.method == "GET":
+        min_price = request.GET.get('min_price')
+        max_price = request.GET.get('max_price')
+        products = Product.objects.filter(Q(pricegte=min_price) & Q(pricelte=max_price))
+
+    return render(request, 'store/store.html', {'products': products})
+
+
 def submit_review(request, product_id):
     url = request.META.get('HTTP_REFERER') # Store the product_detailed item url for redirection 
     if request.method == 'POST':
@@ -103,4 +112,25 @@ def submit_review(request, product_id):
                 messages.success(request, 'Thank you! Your review has been submitted.')
                 return redirect(url)
 
+def terms(request):
+    return render(request, "store/terms.html")
 
+
+
+def AboutUs(request):
+
+    About_Usdata = About_Us.objects.all()
+
+    context = {
+        'About_Us': About_Usdata,
+    }
+    return render(request,'Company/About_Us.html', context)
+
+def Service(request):
+    return render(request,'Company/Service.html')
+
+def Returns_Refunds(request):
+    return render(request,'Company/Returns_Refunds.html')
+
+def contact(request):
+    return render(request, 'store/contact.html',{})

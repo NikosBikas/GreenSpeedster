@@ -46,14 +46,22 @@ $(document).ready(function() {
 </script>
 
 </head>
-<body>
+<style>
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+</style>
     
 <!-- navbar -->
 {% include 'includes/navbar.html' %}
 
+<body>
 {% block content%}
 
 {% endblock%}
-
+</body>
 <!-- footer -->
 {% include 'includes/footer.html' %}

@@ -91,3 +91,21 @@ class ProductGallery(models.Model):
     class Meta:
         verbose_name = 'productgallery'
         verbose_name_plural = 'product gallery'
+
+class Slider(models.Model):
+    title = models.CharField(max_length=100,blank=False)
+    description = models.CharField(max_length=1000)
+    image = models.ImageField(upload_to='slider/',blank=False)
+
+    def __str__(self):
+        return self.title
+
+class About_Us(models.Model):
+    Name = models.CharField(max_length=200,blank=False)
+    title = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    description = models.CharField(max_length=500,blank=True)
+    image = models.ImageField(upload_to='photos/AboutUs',blank=False)
+
+    def __str__(self):
+        return self.Name
