@@ -21,4 +21,4 @@ Please read the [installation instructions](INSTALL.md) included in the reposito
 1. Use gitbash to activate the virtual environment inside ~/lenv/Scripts/activate (command: source env/Scripts/activate )
 2. Run the project using python. (command: python manage.py runserver)
 
-# Authors: Nikolaos Bikas, Panagiotis Grammatikas, Panagiotis Katsaras, Manolis Koutsoudakis, Nikos Koutantelias
+## Authors: Nikolaos Bikas, Panagiotis Grammatikas, Panagiotis Katsaras, Manolis Koutsoudakis, Nikos Koutantelias
