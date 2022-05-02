@@ -1,8 +1,9 @@
 # GreenSpeedster 
 
 ## Overview
-
-[![Django Version](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
+[![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
+[![made-with-Django](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Python Version](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 
 GreenSpeedster is a free open source ecommerce platform for online merchants. GreenSpeedster provides a professional and reliable foundation from which to build a successful online store made with Django.
@@ -21,4 +22,4 @@ Please read the [installation instructions](INSTALL.md) included in the reposito
 1. Use gitbash to activate the virtual environment inside ~/lenv/Scripts/activate (command: source env/Scripts/activate )
 2. Run the project using python. (command: python manage.py runserver)
 
-# Authors: Nikolaos Bikas, Panagiotis Grammatikas, Panagiotis Katsaras, Manolis Koutsoudakis, Nikos Koutantelias
+## Authors: Nikolaos Bikas, Panagiotis Grammatikas, Panagiotis Katsaras, Manolis Koutsoudakis, Nikos Koutantelias
