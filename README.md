@@ -19,7 +19,7 @@ Please read the [installation instructions](INSTALL.md) included in the reposito
 
 ## How to run the project on Linux
 
-1. Use gitbash to activate the virtual environment ~/lenv/Scripts/activate (command: source env/Scripts/activate )
+1. Use gitbash to activate the virtual environment ~/lenv/Scripts/activate (command: source lenv/Scripts/activate )
 2. Run the project using python. (command: python manage.py runserver)
 
 ## Contributors: 
