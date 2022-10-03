@@ -14,17 +14,13 @@ Please read the [installation instructions](INSTALL.md) included in the reposito
 
 ## How to run the project on Windows
 
-1. Use gitbash to activate the virtual environment ~/env/Scripts/activate:
-   source env/Scripts/activate)
-2. Run the project using python: 
-   python manage.py runserver
+1. Use gitbash to activate the virtual environment ~/env/Scripts/activate (command: source env/Scripts/activate )
+2. Run the project using python. (command: python manage.py runserver)
 
-## How to run the project on Linux/macOS
+## How to run the project on Linux
 
-1. Use bash to activate the virtual environment ~/env/Scripts/activate:
-   source env/Scripts/activate)
-2. Run the project using python: 
-   python manage.py runserver
+1. Use gitbash to activate the virtual environment ~/lenv/Scripts/activate (command: source lenv/Scripts/activate )
+2. Run the project using python. (command: python manage.py runserver)
 
 ## Contributors: 
 Nikolaos Bikas, Panagiotis Grammatikas, Panagiotis Katsaras, Manolis Koutsoudakis, Nikos Koutantelias
