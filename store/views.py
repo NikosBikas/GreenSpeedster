@@ -117,7 +117,7 @@ def terms(request):
 
 
 
-def AboutUs(request):
+def about_us(request):
 
     About_Usdata = About_Us.objects.all()
 
@@ -126,10 +126,10 @@ def AboutUs(request):
     }
     return render(request,'Company/About_Us.html', context)
 
-def Service(request):
+def service(request):
     return render(request,'Company/Service.html')
 
-def Returns_Refunds(request):
+def returns_refunds(request):
     return render(request,'Company/Returns_Refunds.html')
 
 def contact(request):
