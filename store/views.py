@@ -150,7 +150,6 @@ def contact(request):
                 'email': email,
                 'content': content
             })
-
             send_mail('subject:','Thank you for your message!','',['greenspeedster@zohomail.eu'],html_message=html)
             return redirect('contact')
     else:
