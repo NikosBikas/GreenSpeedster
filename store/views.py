@@ -84,15 +84,20 @@ def search(request):
 def search_price(request):
     if request.method == "GET":   
         min_price = request.GET['min_price']
-        max_price = request.GET['max_price']     
-        if min_price =='':
-            min_price=0
+        max_price = request.GET['max_price']
+        if min_price == '' and max_price== '':
+            min_price = 0
+            max_price = 15000
+        elif min_price == '':
+            min_price = 0
+        elif max_price == '':
+            max_price = 15000 
         products = Product.objects.filter(Q(price__gte=min_price) & Q(price__lte=max_price))
         product_count = products.count()   
         context = {
             'min_price': min_price,
             'max_price': max_price,
-            'product_count': product_count,
+            'product_count': product_count, 
             'products' : products,  
         }
 
