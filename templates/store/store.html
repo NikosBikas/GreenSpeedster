@@ -67,8 +67,34 @@
                 </div> <!-- card-body.// -->
             </div>
         </article> <!-- filter-group  .// -->
-                
-          
+
+        <!-- price range  .// -->             
+        <article class="filter-group">
+            <header class="card-header">
+                <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                    <i class="icon-control fa fa-chevron-down"></i>
+                    <h6 class="title">Price range </h6>
+                </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_3" >
+                <div class="card-body">
+                    <form action="{% url 'search_price' %}" method="GET">
+                    <div class="form-row" >                      
+                        <div class="form-group col-md-6">
+                        <label>Min</label>
+                        <input class="form-control" name="min_price" placeholder="$0" type="number">
+                        </div>
+                        <div class="form-group text-right col-md-6">
+                        <label>Max</label>
+                        <input class="form-control" name="max_price" placeholder="$20,0000" type="number">
+                        </div>
+                        <button class="btn btn-block btn-success" type="submit">Apply</button>
+                    </div> <!-- form-row.// -->
+                    </form>                
+                </div><!-- card-body.// -->
+            </div>
+        </article>       
+                        
     </div> <!-- card.// -->    
         </aside> <!-- col.// -->
         <main class="col-md-9">    
