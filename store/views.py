@@ -164,7 +164,7 @@ def contact(request):
                 'email': email,
                 'content': content
             })
-            send_mail('subject:','Thank you for your message!','',['greenspeedster@zohomail.eu'],html_message=html)
+            send_mail('subject:','Thank you for your message!','',['greenspeedster_gr@hotmail.com'],html_message=html)
             return redirect('contact')
     else:
         form = ContactForm()
