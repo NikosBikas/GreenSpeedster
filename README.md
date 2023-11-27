@@ -1,7 +1,7 @@
 # GreenSpeedster 
 ![My Remote Image](https://github.com/ThrillSeeker01/Django_Group_Project/blob/master/greenspeedster/greenspeedster.png)
 ## Overview
-[![Windows](https://github.com/NikosBikas/GreenSpeedster/media/photos/products/windows-174-svgrepo-com.svg)](https://www.microsoft.com/en-us/windows?wa=wsignin1.0)
+[![Windows](https://github.com/NikosBikas/GreenSpeedster/tree/master/media/photos/products/windows-174-svgrepo-com.svg)](https://www.microsoft.com/en-us/windows?wa=wsignin1.0)
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://www.linux.org/)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Django](https://img.shields.io/pypi/djversions/djangorestframework?color=%20green&label=Django%20Version%3A)](https://www.djangoproject.com/)
