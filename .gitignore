@@ -1,4 +1,4 @@
 env/
 .env
 nohup.out
-**/__pycache__/
+**/__pycache__/**
