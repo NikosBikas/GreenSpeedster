@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+<br>
+{% include 'includes/alerts.html' %}
 <section class="section-content padding-y ">
     <div class="container">
         {% if not cart_items %}
@@ -58,7 +60,11 @@
                             {% for item in cart_item.variations.all %}
                                 <input type="hidden" name="{{ item.variation_category | lower }}" value="{{ item.variation_value | capfirst }}" >
                             {% endfor %}
+                            {%  if  cart_item.quantity >= cart_item.product.stock %}
+                            <button href="{% url 'add_cart' cart_item.product.id %}" class="btn btn-light" disabled type="submit" id="button-minus"> <i class="fa fa-plus"></i> </button>
+                            {% else %}
                             <button href="{% url 'add_cart' cart_item.product.id %}" class="btn btn-light" type="submit" id="button-minus"> <i class="fa fa-plus"></i> </button>
+                            {% endif %}
                         </form>
                     </div>
                 </div> <!-- input-group.// -->

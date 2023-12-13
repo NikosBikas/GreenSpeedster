@@ -5,6 +5,7 @@ from store.models import Variation
 from .models import CartItem, Cart
 from .models import Product
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 # Create your views here.
 
@@ -173,9 +174,15 @@ def cart(request, total=0, quantity=0, cart_items=None):
         else:
             cart = Cart.objects.get(cart_id=_cart_id(request))
             cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+        # for cart_item in cart_items:
+        #     total += (cart_item.product.price * cart_item.quantity)
+        #     quantity += cart_item.quantity
         for cart_item in cart_items:
             total += (cart_item.product.price * cart_item.quantity)
-            quantity += cart_item.quantity
+            if cart_item.quantity < cart_item.product.stock:
+                quantity += cart_item.quantity
+            else:
+                messages.warning(request,'Quantity limit!')
         tax = (5 * total)/100
         grand_total = total + tax
     except ObjectDoesNotExist:

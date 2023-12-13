@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section class="section-conten padding-y bg">
+    {% include 'includes/alerts.html' %}
+    <div class="container">
+        <div class="row">
+        {% include 'includes/dashboard_sidebar.html' %}
+        <main class="col-md-9">
+            <article class="card">
+            <header class="card-header">
+                <strong class="d-inline-block mr-3">All Products:</strong>
+                <button>Add new</header>
+            </header>
+            <div class="card-body">
+                <div class="row"> 
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID #</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Stock</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Categorie</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% if products %}
+                              {% for product in products %}
+                              <tr>
+                                <td>{{ product.id }}</td>
+                                <td><div class="dash_img"><img src="{{ product.images.url }}"></div></td>
+                                <td>{{ product.product_name }}</td>
+                                <td>{{ product.stock }}</td>
+                                <td>{{ product.price }}</td>
+                                <td>{{ product.category }}</td>
+                              </tr>
+                              {% endfor %}
+                              {% else %}
+                              <div>
+                                <h2>No Result Found! Please try again.</h2>
+                              </div>
+                              {% endif %} 
+                            </tbody>
+                          </table>
+<!-- 
+                          <div class="row">
+                            {% if products %}
+                            {% for product in products %}
+                            <div class="col-md-4">
+                                <figure class="card card-product-grid">
+                                    <div class="img-wrap">                     
+                                        <a href="{{ product.get_url }}"> <img src="{{ product.images.url }}"> </a>                   
+                                    </div> 
+                                    <figcaption class="info-wrap">
+                                        <div class="fix-height">
+                                            <a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
+                                            <div class="price-wrap mt-2">
+                                                <span class="price">{{ product.price }} €</span>
+                                            </div> 
+                                        </div>
+                                        <a href="{{ product.get_url }}" class="btn btn-block btn-success">View Details </a>
+                                    </figcaption>
+                                </figure>
+                            </div> 
+                            {% endfor %}
+                            {% else %}
+                            <div>
+                                <h2>No Result Found! Please try again.</h2>
+                            </div>
+                            {% endif %}    
+                        </div> row end.// 
+                    -->
+
+                    </div>
+                </div> <!-- row.// -->
+            </div> <!-- card-body .// -->
+            </article> <!-- order-group.// --> 
+        </main>
+    </div> <!-- row.// -->
+    </div>   
+</section>
+
+{% endblock %}
+
+
+

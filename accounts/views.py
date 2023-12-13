@@ -120,7 +120,10 @@ def login(request):
                     nextPage = params['next']
                     return redirect(nextPage)
             except:
-                return redirect('dashboard')
+                if request.user.is_staff:
+                    return redirect('dashboard_stuff')
+                else:
+                    return redirect('dashboard')
         else:
             messages.error(request, 'Invalid login credintials')
             return redirect('login')
@@ -159,6 +162,18 @@ def dashboard(request):
         'userprofile': userprofile,
     }
     return render(request, 'accounts/dashboard.html', context)
+
+@login_required(login_url='login')
+def dashboard_stuff(request):
+    orders = Order.objects.all().order_by('-created_at')
+    orders_count = orders.count()
+
+    userprofile = UserProfile.objects.get(user_id=request.user.id)
+    context = {
+        'orders_count': orders_count,
+        'userprofile': userprofile,
+    }
+    return render(request, 'stuff/dashboard_stuff.html', context)
 
 
 def forgotPassword(request):
@@ -228,6 +243,14 @@ def my_orders(request):
         'orders': orders,
     }
     return render(request, 'accounts/my_orders.html', context)
+
+@login_required(login_url='login')
+def all_orders(request):
+    orders = Order.objects.all().order_by('-created_at')
+    context = {
+        'orders': orders,
+    }
+    return render(request, 'stuff/dashboard_all_orders.html', context)
 
 @login_required(login_url='login')
 def edit_profile(request):

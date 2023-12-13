@@ -58,8 +58,13 @@
                                 {% else %}
                                 <div>
                                     <small class="title text-black">Welcome {{ user.first_name }}!</small>
-                                    <div> 
+                                    <div>
+                                        {% if not request.user.is_staff %} 
                                         <a class="text-black" href="{% url 'dashboard' %}">Dashboard</a> <span class="text-gray"> | </span>
+                                        {% endif %}
+                                        {% if request.user.is_staff %} 
+                                        <a class="text-black" href="{% url 'dashboard_stuff' %}">Dashboard</a> <span class="text-gray"> | </span>
+                                        {% endif %}
                                         <a class="text-black" href="{% url 'logout' %}"> Logout</a>
                                     </div>
                                 </div>
@@ -86,8 +91,8 @@
                
             </ul>
             <ul class="navbar-nav">
-                <li><a href="mailto:nick.dev.testing@gmail.com" class="nav-link text-white"> <i class="fa fa-envelope"></i> Email </a></li>
-                <li><a href="tel:2103729050" class="nav-link text-white"> <i class="fa fa-phone"></i> Call us </a></li>
+                <li><a href="mailto:info@thecreators.gr" class="nav-link text-white"> <i class="fa fa-envelope"></i> Email </a></li>
+                <li><a href="tel:6993658301" class="nav-link text-white"> <i class="fa fa-phone"></i> Call us </a></li>
             </ul> 
           </div> <!-- navbar-collapse .// -->
         </div> <!-- container //  -->

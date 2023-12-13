@@ -1,7 +1,17 @@
 /* Hide Radio button  */
 
+.dash_img{
+  width: 20px;
+  height: 20px;
+}
 
+.title:hover{
+  color:#4CAF50!important;
+}
 
+.list-menu a:hover{
+  color:#4CAF50!important;
+}
 
 .rate > input{
     display: none;
@@ -42,11 +52,11 @@ input:checked ~ label, label:hover ~ label{
 /* Hover Highlight */
 input:checked + label:hover, input:checked ~ label:hover, input:checked ~ label:hover ~ label,
 label:hover ~ input:checked ~ label{
-    color: #cc9000;
+    color: #a98329;
 }
 
 .rating-star i{
-    color: #cc9000 !important;
+    color: #ffb503 !important;
 }
 
 /* Change NavBar shoping cart icon on hover */

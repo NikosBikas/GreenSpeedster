@@ -1,8 +1,21 @@
 <aside class="col-md-3">
     <!--   SIDEBAR   -->
     <ul class="list-group">
+        {% if not request.user.is_staff %}
         <a class="list-group-item {% if '/accounts/' == request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'dashboard' %}"> Dashboard </a>
+        {% endif %}
+        {% if request.user.is_staff %}
+        <a class="list-group-item {% if '/dashboard_stuff/' in request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'dashboard_stuff' %}">Staff Dashboard </a>
+        {% endif %}
+        {% if not request.user.is_staff %}
         <a class="list-group-item {% if '/my_orders/' in request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'my_orders' %}"> My Orders </a>
+        {% endif %}
+        {% if request.user.is_staff %}
+        <a class="list-group-item {% if '/all_orders/' in request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'all_orders' %}"> All Orders </a>
+        {% endif %}
+        {% if request.user.is_staff %}
+        <a class="list-group-item {% if '/dashboard_products/' in request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'dashboard_products' %}"> Products </a>
+        {% endif %}
         <a class="list-group-item {% if '/edit_profile/' in request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'edit_profile' %}"> Edit Profile </a>
         <a class="list-group-item {% if '/change_password/' in request.path %}list-group-item-success{% endif %}" style="color:black" href="{% url 'change_password' %}"> Change Password </a>
     </ul>
